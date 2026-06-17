@@ -86,20 +86,37 @@ except Exception as e:
     print(f'Erro ao calcular {e}')
 
 try:
-        plt.figure(figsize=(18, 8))
-        plt.subplots(2, 1)
+#        plt.figure(figsize=(18, 8))
+        plt.subplots(2, 1, figsize=(18,10))
+#   No subplots se quiser colocar mais um gráfico é no 2,2
+#   No subplot se vc aumentar tem que ajeitar, adicionando (1,0,0) -> o primeiro é a linha)
+# (0,1,0) -> segundo é a coluna
+# (0,0,1) -> terceiro é a posição:
+# (1   2 )
+# (3   4 )        
 
-        plt.subplot(2,1,1) # subplot de duas linhas e uma coluna na posição 1
-        plt.boxplot(array_estelionato, vert=False, showmeans=True)
 
-        plt.subplot(2,1,2) #subplor de duas linhas e uma coluna na posição 2
+# POSIÇÃO 01
+        plt.subplot(2,1,1)
+#        plt.subplot(2,1,1) # subplot de duas linhas e uma coluna na posição 1
+        plt.boxplot(array_estelionato, vert=False, showmeans=True) #showfliers=False
+        plt.title('Boxplot da Distribuição')
+
+#POSIÇÃO 02
+        plt.subplot(2,1,2) #subplot de duas linhas e uma coluna na posição 2
         plt.text(0.1, 0.9, f'Média: {media_estelionato:.2f}')
-        plt.text(0.1, 0.8, f'Mediana: {mediana_estelionato:.2f}')
-        plt.text(0.1, 0.7, f'Distância: {distancia:.2f}')
+#        plt.text(0.1, 0.8, f'Mediana: {mediana_estelionato:.2f}')
+        plt.text(0.1, 0.8, f'Distância: {distancia:.2f}')
+        plt.text(0.1, 0.7, f'Limite Inferior: {limite_inferior:.2f}')
         plt.text(0.1, 0.6, f'Mínimo: {minimo:.2f}')
-        plt.text(0.1, 0.5, f'Máximo: {maximo:.2f}')
-        plt.text(0.1, 0.4, f'Limite Superior: {limite_superior:.2f}')
-        plt.text(0.1, 0.3, f'Limite Inferior: {limite_inferior:.2f}')
+
+        plt.text(0.1, 0.5, f'Q1: {q1:.2f}')
+        plt.text(0.1, 0.4, f'Mediana: {mediana_estelionato:.2f}')
+        plt.text(0.1, 0.3, f'Q3: {q3:.2f}')
+        plt.text(0.1, 0.2, f'Limite Superior: {limite_superior:.2f}')
+        plt.text(0.1, 0.1, f'Máximo: {maximo:.2f}')
+#        plt.text(0.1, 0.2, f'Amplitude Total: {amplitude:.2f}')
+
         plt.show()
 
 except Exception as e:
