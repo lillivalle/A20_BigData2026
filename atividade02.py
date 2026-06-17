@@ -98,6 +98,8 @@ try:
         plt.text(0.1, 0.7, f'Distância: {distancia:.2f}')
         plt.text(0.1, 0.6, f'Mínimo: {minimo:.2f}')
         plt.text(0.1, 0.5, f'Máximo: {maximo:.2f}')
+        plt.text(0.1, 0.4, f'Limite Superior: {limite_superior:.2f}')
+        plt.text(0.1, 0.3, f'Limite Inferior: {limite_inferior:.2f}')
         plt.show()
 
 except Exception as e:
